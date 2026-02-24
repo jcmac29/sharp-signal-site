@@ -1,0 +1,19 @@
+{
+  "lastUpdated": "2026-02-23T00:00:00.000Z",
+  "season": "2025-26",
+  "overall": {
+    "record": "0-0-0",
+    "winRate": 0,
+    "units": 0,
+    "roi": 0
+  },
+  "bySport": [],
+  "byTier": [],
+  "streaks": {
+    "current": 0,
+    "currentType": null,
+    "longestWin": 0,
+    "longestLoss": 0
+  },
+  "recentPicks": []
+}

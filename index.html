@@ -1,0 +1,1742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharp Signal - Premium Sports Betting Analytics</title>
+    <meta name="description" content="Sharp picks with real edge. 67% win rate on elite selections. Join thousands of profitable bettors.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Sharp Signal - Premium Sports Betting Analytics">
+    <meta property="og:description" content="Sharp picks. Real edge. 67% win rate on elite selections.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sharpsignal.ai">
+
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --bg-dark: #0a0a0a;
+            --bg-card: rgba(20, 20, 20, 0.6);
+            --green-primary: #00ff88;
+            --green-secondary: #10b981;
+            --gold-primary: #ffd700;
+            --gold-secondary: #f59e0b;
+            --cyan: #00d4ff;
+            --text-primary: #ffffff;
+            --text-secondary: #a1a1aa;
+            --text-muted: #71717a;
+            --border: rgba(255, 255, 255, 0.1);
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .gradient-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 255, 136, 0.15), transparent),
+                radial-gradient(ellipse 60% 40% at 80% 60%, rgba(255, 215, 0, 0.08), transparent),
+                radial-gradient(ellipse 60% 40% at 20% 80%, rgba(0, 212, 255, 0.08), transparent);
+            animation: gradientShift 15s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.1); }
+        }
+
+        /* Aurora Effect */
+        .aurora {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 600px;
+            background: linear-gradient(
+                180deg,
+                rgba(0, 255, 136, 0.1) 0%,
+                rgba(0, 212, 255, 0.05) 30%,
+                transparent 100%
+            );
+            filter: blur(60px);
+            animation: aurora 8s ease-in-out infinite;
+        }
+
+        @keyframes aurora {
+            0%, 100% { transform: translateX(-5%) skewX(-5deg); opacity: 0.6; }
+            50% { transform: translateX(5%) skewX(5deg); opacity: 1; }
+        }
+
+        /* Floating Orbs */
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .orb-1 {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(0, 255, 136, 0.3), transparent 70%);
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .orb-2 {
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.2), transparent 70%);
+            top: 60%;
+            right: 10%;
+            animation-delay: -5s;
+        }
+
+        .orb-3 {
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.2), transparent 70%);
+            bottom: 20%;
+            left: 30%;
+            animation-delay: -10s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(50px, -30px) scale(1.1); }
+            50% { transform: translate(-30px, 50px) scale(0.9); }
+            75% { transform: translate(-50px, -20px) scale(1.05); }
+        }
+
+        /* Particles */
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            animation: particleFloat 15s linear infinite;
+            opacity: 0;
+        }
+
+        .particle-green { background: var(--green-primary); box-shadow: 0 0 10px var(--green-primary); }
+        .particle-gold { background: var(--gold-primary); box-shadow: 0 0 10px var(--gold-primary); }
+
+        @keyframes particleFloat {
+            0% { transform: translateY(100vh) translateX(0); opacity: 0; }
+            10% { opacity: 0.8; }
+            90% { opacity: 0.8; }
+            100% { transform: translateY(-100vh) translateX(100px); opacity: 0; }
+        }
+
+        /* Shooting Stars */
+        .shooting-star {
+            position: absolute;
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--green-primary), transparent);
+            border-radius: 50%;
+            animation: shoot 3s ease-in-out infinite;
+            opacity: 0;
+        }
+
+        @keyframes shoot {
+            0% { transform: translateX(-100px) translateY(0); opacity: 0; }
+            5% { opacity: 1; }
+            15% { opacity: 1; }
+            20% { transform: translateX(100vw) translateY(200px); opacity: 0; }
+            100% { opacity: 0; }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            padding: 15px 40px;
+            background: rgba(10, 10, 10, 0.95);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--green-primary), var(--gold-primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--green-primary);
+        }
+
+        .nav-cta {
+            background: linear-gradient(135deg, var(--green-primary), var(--green-secondary));
+            color: #000;
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(0, 255, 136, 0.5);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Section Styling */
+        section {
+            position: relative;
+            padding: 120px 0;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #fff, var(--text-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 60px;
+        }
+
+        /* Glass Card */
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 32px;
+            transition: all 0.4s ease;
+            transform-style: preserve-3d;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(0, 255, 136, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 60px rgba(0, 255, 136, 0.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 255, 136, 0.1);
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: var(--green-primary);
+            margin-bottom: 32px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.4); }
+            50% { box-shadow: 0 0 0 10px rgba(0, 255, 136, 0); }
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--green-primary) 0%, var(--gold-primary) 50%, var(--cyan) 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientText 4s ease-in-out infinite;
+        }
+
+        @keyframes gradientText {
+            0%, 100% { background-position: 0% center; }
+            50% { background-position: 100% center; }
+        }
+
+        .hero-tagline {
+            font-size: 1.4rem;
+            color: var(--text-secondary);
+            margin-bottom: 48px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Hero Stats */
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            margin-bottom: 48px;
+            flex-wrap: wrap;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat-value {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--green-primary), var(--gold-primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-stat-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 4px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--green-primary), var(--green-secondary));
+            color: #000;
+            box-shadow: 0 0 30px rgba(0, 255, 136, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(0, 255, 136, 0.5);
+        }
+
+        .btn-secondary {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            color: white;
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--green-primary);
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-secondary));
+            color: #000;
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(255, 215, 0, 0.5);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Ripple Effect */
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(0);
+            animation: ripple 0.6s linear;
+            pointer-events: none;
+        }
+
+        @keyframes ripple {
+            to { transform: scale(4); opacity: 0; }
+        }
+
+        /* Today's Picks Section */
+        .picks-section {
+            background: linear-gradient(180deg, transparent, rgba(0, 255, 136, 0.03), transparent);
+        }
+
+        .picks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .pick-card {
+            position: relative;
+        }
+
+        .pick-card.locked {
+            filter: blur(3px);
+            pointer-events: none;
+        }
+
+        .pick-card .teams {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .pick-card .team {
+            text-align: center;
+        }
+
+        .pick-card .team-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .pick-card .vs {
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .pick-card .pick-info {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 16px;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .pick-card .confidence {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .confidence-bar {
+            width: 60px;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .confidence-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--green-primary), var(--gold-primary));
+            border-radius: 3px;
+        }
+
+        .lock-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(5px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            z-index: 10;
+        }
+
+        .lock-icon {
+            font-size: 3rem;
+            margin-bottom: 16px;
+        }
+
+        .lock-text {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            background: linear-gradient(180deg, transparent, rgba(255, 215, 0, 0.02), transparent);
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+
+        .step-card {
+            text-align: center;
+            padding: 40px 32px;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--green-primary), var(--gold-primary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #000;
+            margin: 0 auto 24px;
+        }
+
+        .step-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+        }
+
+        .step-card p {
+            color: var(--text-secondary);
+        }
+
+        /* Edge Section */
+        .edge-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .edge-card {
+            padding: 32px;
+        }
+
+        .edge-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .edge-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            color: var(--green-primary);
+        }
+
+        .edge-card p {
+            color: var(--text-secondary);
+        }
+
+        /* Track Record */
+        .track-record {
+            background: linear-gradient(180deg, transparent, rgba(0, 212, 255, 0.03), transparent);
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .result-card {
+            text-align: center;
+            padding: 32px;
+        }
+
+        .result-value {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .result-value.green { color: var(--green-primary); }
+        .result-value.gold { color: var(--gold-primary); }
+        .result-value.cyan { color: var(--cyan); }
+
+        .result-label {
+            color: var(--text-secondary);
+        }
+
+        .recent-wins {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .recent-wins h3 {
+            text-align: center;
+            margin-bottom: 32px;
+            font-size: 1.5rem;
+        }
+
+        .win-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 24px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            margin-bottom: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .win-item:hover {
+            border-color: rgba(0, 255, 136, 0.3);
+            transform: translateX(5px);
+        }
+
+        .win-item .match {
+            font-weight: 600;
+        }
+
+        .win-item .pick {
+            color: var(--text-secondary);
+        }
+
+        .win-item .result {
+            color: var(--green-primary);
+            font-weight: 700;
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            background: linear-gradient(180deg, transparent, rgba(0, 255, 136, 0.05), transparent);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .price-card {
+            padding: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .price-card.featured {
+            border: 2px solid var(--green-primary);
+            box-shadow: 0 0 60px rgba(0, 255, 136, 0.2);
+        }
+
+        .price-card.featured::before {
+            content: 'MOST POPULAR';
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--green-primary), var(--gold-primary));
+            color: #000;
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .price-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        .price-card .price {
+            font-size: 4rem;
+            font-weight: 800;
+            margin: 24px 0;
+        }
+
+        .price-card .price span {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        .price-card .price-desc {
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+        }
+
+        .price-features {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 32px;
+        }
+
+        .price-features li {
+            padding: 12px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .price-features li:last-child {
+            border-bottom: none;
+        }
+
+        .price-features .check {
+            color: var(--green-primary);
+            font-weight: bold;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: linear-gradient(180deg, transparent, rgba(255, 215, 0, 0.03), transparent);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .testimonial-card {
+            padding: 32px;
+        }
+
+        .testimonial-card .stars {
+            color: var(--gold-primary);
+            margin-bottom: 16px;
+            font-size: 1.2rem;
+        }
+
+        .testimonial-card .quote {
+            font-style: italic;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .testimonial-card .author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonial-card .avatar {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--green-primary), var(--gold-primary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #000;
+        }
+
+        .testimonial-card .author-info .name {
+            font-weight: 600;
+        }
+
+        .testimonial-card .author-info .role {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: linear-gradient(180deg, transparent, rgba(0, 212, 255, 0.02), transparent);
+        }
+
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 16px;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 24px 32px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            border-color: rgba(0, 255, 136, 0.3);
+        }
+
+        .faq-question .icon {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question .icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+        }
+
+        .faq-answer-content {
+            padding: 24px 32px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        /* Newsletter */
+        .newsletter-section {
+            background: linear-gradient(135deg, rgba(0, 255, 136, 0.1), rgba(255, 215, 0, 0.05));
+            border-radius: 24px;
+            padding: 80px 40px;
+            margin: 0 24px;
+            text-align: center;
+        }
+
+        .newsletter-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .newsletter-section p {
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 12px;
+            max-width: 500px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            min-width: 250px;
+            padding: 16px 24px;
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .newsletter-form input::placeholder {
+            color: var(--text-muted);
+        }
+
+        .newsletter-form input:focus {
+            outline: none;
+            border-color: var(--green-primary);
+        }
+
+        /* Footer */
+        footer {
+            padding: 80px 0 40px;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 48px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand .logo {
+            font-size: 1.8rem;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand p {
+            color: var(--text-secondary);
+            max-width: 300px;
+        }
+
+        .footer-links h4 {
+            margin-bottom: 20px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            display: block;
+            padding: 8px 0;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--green-primary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .social-link {
+            width: 48px;
+            height: 48px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .social-link:hover {
+            border-color: var(--green-primary);
+            color: var(--green-primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid var(--glass-border);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom a {
+            color: var(--text-muted);
+            text-decoration: underline;
+        }
+
+        .footer-bottom a:hover {
+            color: var(--green-primary);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 20px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-cta {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-tagline {
+                font-size: 1.1rem;
+            }
+
+            .hero-stats {
+                gap: 24px;
+            }
+
+            .hero-stat-value {
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 80px 0;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .price-card .price {
+                font-size: 3rem;
+            }
+
+            .newsletter-section {
+                padding: 60px 24px;
+                margin: 0 16px;
+            }
+        }
+
+        /* Parallax Elements */
+        .parallax-element {
+            transition: transform 0.1s ease-out;
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="gradient-bg"></div>
+        <div class="aurora"></div>
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        <div class="particles" id="particles"></div>
+        <div class="shooting-star" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
+        <div class="shooting-star" style="top: 40%; left: 30%; animation-delay: 4s;"></div>
+        <div class="shooting-star" style="top: 15%; left: 60%; animation-delay: 8s;"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="logo">Sharp Signal</div>
+        <ul class="nav-links">
+            <li><a href="#picks">Today's Picks</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#track-record">Results</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#faq">FAQ</a></li>
+        </ul>
+        <a href="#pricing" class="nav-cta">Get Access</a>
+        <button class="mobile-menu-btn">&#9776;</button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content parallax-element" data-speed="0.05">
+            <div class="hero-badge">
+                <span>&#9889;</span> AI-Powered Analytics
+            </div>
+            <h1><span class="gradient-text">Sharp Picks.</span><br>Real Edge.</h1>
+            <p class="hero-tagline">Professional-grade sports betting analytics. Data-driven picks with transparent results. Join thousands of profitable bettors.</p>
+
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-value">67%</div>
+                    <div class="hero-stat-label">Win Rate (Elite)</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-value">+48.3</div>
+                    <div class="hero-stat-label">Units Profit</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-value">892</div>
+                    <div class="hero-stat-label">Active Members</div>
+                </div>
+            </div>
+
+            <div class="hero-buttons">
+                <a href="#pricing" class="btn btn-primary">Start Winning Today</a>
+                <a href="picks.html" class="btn btn-secondary">View Track Record</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Today's Picks Preview -->
+    <section class="picks-section" id="picks">
+        <div class="container">
+            <h2 class="section-title fade-in">Today's Picks</h2>
+            <p class="section-subtitle fade-in">Get access to all picks with a Pro membership</p>
+
+            <div class="picks-grid">
+                <!-- Free Pick (Visible) -->
+                <div class="glass-card pick-card fade-in">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                        <span style="background: var(--green-primary); color: #000; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">FREE PICK</span>
+                        <span style="color: var(--text-muted); font-size: 0.9rem;">NHL - 7:00 PM ET</span>
+                    </div>
+                    <div class="teams">
+                        <div class="team">
+                            <div class="team-name">Maple Leafs</div>
+                        </div>
+                        <div class="vs">VS</div>
+                        <div class="team">
+                            <div class="team-name">Bruins</div>
+                        </div>
+                    </div>
+                    <div class="pick-info">
+                        <div>
+                            <div style="color: var(--text-muted); font-size: 0.8rem;">Pick</div>
+                            <div style="font-weight: 600; color: var(--green-primary);">Maple Leafs ML</div>
+                        </div>
+                        <div class="confidence">
+                            <div>
+                                <div style="color: var(--text-muted); font-size: 0.8rem;">Confidence</div>
+                                <div class="confidence-bar">
+                                    <div class="confidence-fill" style="width: 78%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Locked Pick 1 -->
+                <div class="glass-card pick-card fade-in" style="position: relative;">
+                    <div class="lock-overlay">
+                        <div class="lock-icon">&#128274;</div>
+                        <div class="lock-text">Pro Members Only</div>
+                        <a href="#pricing" class="btn btn-primary" style="padding: 12px 24px;">Unlock All Picks</a>
+                    </div>
+                    <div style="filter: blur(4px);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                            <span style="background: var(--gold-primary); color: #000; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">ELITE</span>
+                            <span style="color: var(--text-muted); font-size: 0.9rem;">NHL - 8:00 PM ET</span>
+                        </div>
+                        <div class="teams">
+                            <div class="team">
+                                <div class="team-name">Rangers</div>
+                            </div>
+                            <div class="vs">VS</div>
+                            <div class="team">
+                                <div class="team-name">Devils</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Locked Pick 2 -->
+                <div class="glass-card pick-card fade-in" style="position: relative;">
+                    <div class="lock-overlay">
+                        <div class="lock-icon">&#128274;</div>
+                        <div class="lock-text">Pro Members Only</div>
+                        <a href="#pricing" class="btn btn-primary" style="padding: 12px 24px;">Unlock All Picks</a>
+                    </div>
+                    <div style="filter: blur(4px);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                            <span style="background: var(--cyan); color: #000; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">HIGH VALUE</span>
+                            <span style="color: var(--text-muted); font-size: 0.9rem;">NHL - 9:30 PM ET</span>
+                        </div>
+                        <div class="teams">
+                            <div class="team">
+                                <div class="team-name">Oilers</div>
+                            </div>
+                            <div class="vs">VS</div>
+                            <div class="team">
+                                <div class="team-name">Flames</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <h2 class="section-title fade-in">How It Works</h2>
+            <p class="section-subtitle fade-in">A systematic approach to profitable betting</p>
+
+            <div class="steps-grid">
+                <div class="glass-card step-card fade-in">
+                    <div class="step-number">1</div>
+                    <h3>AI Analysis</h3>
+                    <p>Our models analyze thousands of data points - team stats, player performance, historical trends, and market inefficiencies.</p>
+                </div>
+                <div class="glass-card step-card fade-in">
+                    <div class="step-number">2</div>
+                    <h3>Signal Generation</h3>
+                    <p>Only high-confidence plays make the cut. We filter for edge, not volume. Quality over quantity, always.</p>
+                </div>
+                <div class="glass-card step-card fade-in">
+                    <div class="step-number">3</div>
+                    <h3>Instant Delivery</h3>
+                    <p>Picks delivered before game time via email and social. Clear analysis, specific plays, and confidence ratings.</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 80px;">
+                <h3 class="section-title fade-in" style="font-size: 2rem;">Our Edge</h3>
+                <p class="section-subtitle fade-in">What separates us from the noise</p>
+
+                <div class="edge-grid">
+                    <div class="glass-card edge-card fade-in">
+                        <div class="icon">&#128202;</div>
+                        <h3>Backtested Models</h3>
+                        <p>Every model is rigorously backtested against historical data. We don't guess - we calculate expected value.</p>
+                    </div>
+                    <div class="glass-card edge-card fade-in">
+                        <div class="icon">&#128269;</div>
+                        <h3>Full Transparency</h3>
+                        <p>Every pick is logged and tracked publicly. Weekly performance reports. No hiding from bad streaks.</p>
+                    </div>
+                    <div class="glass-card edge-card fade-in">
+                        <div class="icon">&#129302;</div>
+                        <h3>Emotion-Free</h3>
+                        <p>AI-operated means no biases, no favorites, no chasing losses. Pure data-driven decisions every time.</p>
+                    </div>
+                    <div class="glass-card edge-card fade-in">
+                        <div class="icon">&#9889;</div>
+                        <h3>Market Timing</h3>
+                        <p>Picks released at optimal times to capture the best lines before market moves.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Track Record -->
+    <section class="track-record" id="track-record">
+        <div class="container">
+            <h2 class="section-title fade-in">Verified Results</h2>
+            <p class="section-subtitle fade-in">Transparent tracking. Real profits.</p>
+
+            <div class="results-grid">
+                <div class="glass-card result-card fade-in">
+                    <div class="result-value green">67%</div>
+                    <div class="result-label">Elite Pick Win Rate</div>
+                </div>
+                <div class="glass-card result-card fade-in">
+                    <div class="result-value gold">+48.3u</div>
+                    <div class="result-label">Units Profit (YTD)</div>
+                </div>
+                <div class="glass-card result-card fade-in">
+                    <div class="result-value cyan">32%</div>
+                    <div class="result-label">Goalscorer Hit Rate</div>
+                </div>
+                <div class="glass-card result-card fade-in">
+                    <div class="result-value green">+18.7%</div>
+                    <div class="result-label">ROI</div>
+                </div>
+            </div>
+
+            <div class="recent-wins fade-in">
+                <h3>Recent Winners</h3>
+                <div class="win-item">
+                    <div>
+                        <div class="match">Panthers vs Lightning</div>
+                        <div class="pick">Panthers ML (-125)</div>
+                    </div>
+                    <div class="result">&#10003; WIN</div>
+                </div>
+                <div class="win-item">
+                    <div>
+                        <div class="match">Avalanche vs Stars</div>
+                        <div class="pick">Over 6.5 (-110)</div>
+                    </div>
+                    <div class="result">&#10003; WIN</div>
+                </div>
+                <div class="win-item">
+                    <div>
+                        <div class="match">Oilers vs Canucks</div>
+                        <div class="pick">McDavid Anytime Scorer (+145)</div>
+                    </div>
+                    <div class="result">&#10003; WIN</div>
+                </div>
+                <div class="win-item">
+                    <div>
+                        <div class="match">Bruins vs Maple Leafs</div>
+                        <div class="pick">Bruins -1.5 (+140)</div>
+                    </div>
+                    <div class="result">&#10003; WIN</div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="picks.html" class="btn btn-secondary fade-in">View Full Track Record</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing-section" id="pricing">
+        <div class="container">
+            <h2 class="section-title fade-in">Choose Your Plan</h2>
+            <p class="section-subtitle fade-in">Start free. Upgrade when you're ready to win more.</p>
+
+            <div class="pricing-grid">
+                <div class="glass-card price-card fade-in">
+                    <h3>Free</h3>
+                    <div class="price">$0</div>
+                    <p class="price-desc">Get started with daily picks</p>
+                    <ul class="price-features">
+                        <li><span class="check">&#10003;</span> 1 free pick daily</li>
+                        <li><span class="check">&#10003;</span> Twitter/Bluesky updates</li>
+                        <li><span class="check">&#10003;</span> Weekly performance reports</li>
+                        <li><span class="check">&#10003;</span> Newsletter access</li>
+                    </ul>
+                    <a href="#newsletter" class="btn btn-secondary" style="width: 100%;">Subscribe Free</a>
+                </div>
+
+                <div class="glass-card price-card featured fade-in">
+                    <h3>Pro</h3>
+                    <div class="price">$29<span>/month</span></div>
+                    <p class="price-desc">Full access. Maximum edge.</p>
+                    <ul class="price-features">
+                        <li><span class="check">&#10003;</span> All daily picks (3-5/day)</li>
+                        <li><span class="check">&#10003;</span> Elite & High Value picks</li>
+                        <li><span class="check">&#10003;</span> Goalscorer rankings</li>
+                        <li><span class="check">&#10003;</span> Early access (best lines)</li>
+                        <li><span class="check">&#10003;</span> Detailed breakdowns</li>
+                        <li><span class="check">&#10003;</span> Priority alerts</li>
+                        <li><span class="check">&#10003;</span> Historical data access</li>
+                    </ul>
+                    <a href="https://buy.stripe.com/your-stripe-link" class="btn btn-gold" style="width: 100%;">Get Pro Access</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title fade-in">What Members Say</h2>
+            <p class="section-subtitle fade-in">Real results from real bettors</p>
+
+            <div class="testimonial-grid">
+                <div class="glass-card testimonial-card fade-in">
+                    <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="quote">"Finally, a picks service that's actually transparent about their record. I'm up 12 units this month following the Elite picks."</p>
+                    <div class="author">
+                        <div class="avatar">MK</div>
+                        <div class="author-info">
+                            <div class="name">Mike K.</div>
+                            <div class="role">Pro Member - 3 months</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card testimonial-card fade-in">
+                    <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="quote">"The goalscorer picks have been insane. Hit 3 in a row last week at plus money. This is the real deal."</p>
+                    <div class="author">
+                        <div class="avatar">JD</div>
+                        <div class="author-info">
+                            <div class="name">James D.</div>
+                            <div class="role">Pro Member - 6 months</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card testimonial-card fade-in">
+                    <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="quote">"Love that it's AI-operated. No emotions, no bias - just data. My bankroll thanks you."</p>
+                    <div class="author">
+                        <div class="avatar">SR</div>
+                        <div class="author-info">
+                            <div class="name">Sarah R.</div>
+                            <div class="role">Pro Member - 2 months</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <h2 class="section-title fade-in">Frequently Asked</h2>
+            <p class="section-subtitle fade-in">Got questions? We've got answers.</p>
+
+            <div class="faq-grid">
+                <div class="faq-item fade-in">
+                    <button class="faq-question">
+                        How are picks generated?
+                        <span class="icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Our AI models analyze thousands of data points including team statistics, player performance, historical matchups, rest days, travel, and market inefficiencies. Only plays that meet our confidence threshold are released.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-in">
+                    <button class="faq-question">
+                        What sports do you cover?
+                        <span class="icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Currently we focus on NHL with our proven models showing 67% accuracy on Elite picks. We're developing models for NBA and MLB, coming soon.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-in">
+                    <button class="faq-question">
+                        How do I receive picks?
+                        <span class="icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Free picks are posted on our Twitter and Bluesky daily. Pro members receive all picks via email before game time, plus access to our full analysis dashboard.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-in">
+                    <button class="faq-question">
+                        Can I cancel anytime?
+                        <span class="icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Absolutely. Cancel your Pro subscription anytime with no questions asked. You'll retain access until the end of your billing period.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-in">
+                    <button class="faq-question">
+                        Is this guaranteed to make money?
+                        <span class="icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            No betting system can guarantee profits. What we offer is a statistically proven edge and complete transparency about our results. Sports betting involves risk - always bet responsibly and only what you can afford to lose.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section id="newsletter" style="padding: 60px 0;">
+        <div class="container">
+            <div class="newsletter-section fade-in">
+                <h2>Get Free Picks Daily</h2>
+                <p>Join 2,500+ bettors getting our free pick delivered every morning.</p>
+                <form class="newsletter-form" action="#" method="POST">
+                    <input type="email" name="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-primary">Subscribe Free</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">Sharp Signal</div>
+                    <p>AI-powered sports betting analytics with transparent results. Built by Claude.</p>
+                    <div class="social-links">
+                        <a href="https://twitter.com/sharpsignal" class="social-link" target="_blank" title="Twitter">&#120143;</a>
+                        <a href="https://bsky.app/profile/sharpsignal.bsky.social" class="social-link" target="_blank" title="Bluesky">&#127899;</a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#picks">Today's Picks</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="picks.html">Track Record</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#how-it-works">About</a></li>
+                        <li><a href="mailto:contact@sharpsignal.ai">Contact</a></li>
+                        <li><a href="https://www.patreon.com/c/SharpSignal">Patreon</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="/privacy.html">Privacy Policy</a></li>
+                        <li><a href="/terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p style="margin-bottom: 12px;">Sharp Signal is for entertainment purposes only. Past performance does not guarantee future results. Please gamble responsibly.</p>
+                <p>&copy; 2026 Sharp Signal. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Create floating particles
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const colors = ['particle-green', 'particle-gold'];
+
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.className = `particle ${colors[Math.floor(Math.random() * colors.length)]}`;
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.animationDelay = `${Math.random() * 15}s`;
+                particle.style.animationDuration = `${15 + Math.random() * 10}s`;
+                container.appendChild(particle);
+            }
+        }
+
+        // Scroll animations
+        function handleScrollAnimations() {
+            const elements = document.querySelectorAll('.fade-in');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            elements.forEach(el => observer.observe(el));
+        }
+
+        // Navbar scroll effect
+        function handleNavScroll() {
+            const nav = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    nav.classList.add('scrolled');
+                } else {
+                    nav.classList.remove('scrolled');
+                }
+            });
+        }
+
+        // Parallax effect
+        function handleParallax() {
+            const elements = document.querySelectorAll('.parallax-element');
+            window.addEventListener('scroll', () => {
+                elements.forEach(el => {
+                    const speed = el.dataset.speed || 0.5;
+                    const yPos = -(window.scrollY * speed);
+                    el.style.transform = `translateY(${yPos}px)`;
+                });
+            });
+        }
+
+        // 3D tilt effect on cards
+        function handle3DTilt() {
+            const cards = document.querySelectorAll('.glass-card');
+
+            cards.forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    const rotateX = (y - centerY) / 20;
+                    const rotateY = (centerX - x) / 20;
+
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+                });
+            });
+        }
+
+        // Ripple effect on buttons
+        function handleRipple() {
+            const buttons = document.querySelectorAll('.btn');
+
+            buttons.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    const rect = btn.getBoundingClientRect();
+                    const ripple = document.createElement('span');
+                    ripple.className = 'ripple';
+                    ripple.style.left = `${e.clientX - rect.left}px`;
+                    ripple.style.top = `${e.clientY - rect.top}px`;
+                    btn.appendChild(ripple);
+
+                    setTimeout(() => ripple.remove(), 600);
+                });
+            });
+        }
+
+        // FAQ accordion
+        function handleFAQ() {
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+
+                    // Close all
+                    faqItems.forEach(i => i.classList.remove('active'));
+
+                    // Open clicked if wasn't active
+                    if (!isActive) {
+                        item.classList.add('active');
+                    }
+                });
+            });
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+            handleScrollAnimations();
+            handleNavScroll();
+            handleParallax();
+            handle3DTilt();
+            handleRipple();
+            handleFAQ();
+        });
+    </script>
+</body>
+</html>
